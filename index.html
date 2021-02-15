@@ -6,8 +6,26 @@
 </head>
 
 <body>
-<h1 style="text-align:center;"> 깃헙에 처음 집을 짓는다</H1>
-<p>그런데 키보드가 대문자로 바꾸어졌네</p>
+<h1 style="text-align:center;"> 깃헙에 처음 집짓기</H1>
+<p>게시판 연습이오</p>
+
+<?php
+// define variables and set to empty values
+$name =  $gender = $comment = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  $name = test_input($_POST["name"]);
+  $comment = test_input($_POST["comment"]);
+  $gender = test_input($_POST["gender"]);
+}
+
+function test_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
+?>
 
 
 
